@@ -30721,14 +30721,16 @@ _.e=0
 _.a=null
 _.b=a
 _.c=null},
-aYg:function aYg(a){this.a=a},
+aYg:function aYg(a,b){this.a=a
+this.b=b},
 aYh:function aYh(a,b){this.a=a
 this.b=b},
 aYf:function aYf(a,b,c){this.a=a
 this.b=b
 this.c=c},
 aYi:function aYi(a){this.a=a},
-aYj:function aYj(a){this.a=a},
+aYj:function aYj(a,b){this.a=a
+this.b=b},
 aYk:function aYk(a,b){this.a=a
 this.b=b},
 aYe:function aYe(a,b,c){this.a=a
@@ -111074,7 +111076,7 @@ A.wQ.prototype={
 ah(){return new A.aaG(B.u)}}
 A.aaG.prototype={
 q(a){var s,r,q,p,o,n=this,m=null,l="assets/images/web_logo.svg",k="LogIn or SignUp",j=t.l,i=A.A(a,m,j).w.a,h=i.a
-if(h<992){s=A.a([A.aX(m,A.ba(l,m,m,B.F,m,197),B.w,!1,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,new A.aYg(a),m,m,m,m,m,m),B.p],t.p)
+if(h<992){s=A.a([A.aX(m,A.ba(l,m,m,B.F,m,197),B.w,!1,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,new A.aYg(n,a),m,m,m,m,m,m),B.p],t.p)
 r=new A.aI(A.a(["Home","Features","Landlord","About Us","Contact","Download App"],t.s),t.ly)
 B.b.H(s,r.gaU(r).b6(0,new A.aYh(n,a),t.j))
 s.push(B.p)
@@ -111087,7 +111089,7 @@ if(r==null)r=$.bh=B.a7
 r=r.dH(0,m,t.Fy).ay
 r=r.gk(r)
 if(h>992){q=t.p
-h=A.b1(A.P(A.a([new A.l(h*0.14,m,m,m),A.aX(m,A.ba(l,m,m,B.F,m,197),B.w,!1,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,new A.aYj(a),m,m,m,m,m,m)],q),B.f,B.h,B.c,m),4)
+h=A.b1(A.P(A.a([new A.l(h*0.14,m,m,m),A.aX(m,A.ba(l,m,m,B.F,m,197),B.w,!1,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,new A.aYj(n,a),m,m,m,m,m,m)],q),B.f,B.h,B.c,m),4)
 p=new A.aI(A.a(["Home","Features","Landlord","About Us","Contact","Download App"],t.s),t.ly)
 o=t.j
 o=A.a8(p.gaU(p).b6(0,new A.aYk(n,a),o),!0,o)
@@ -111100,7 +111102,8 @@ q=A.P(A.a([h,A.b1(A.P(o,B.f,B.dy,B.c,m),7)],q),B.f,B.h,B.c,m)
 j=q}else j=A.j(n.d,m,m,m,m,m,m,m,m,m)
 return A.bR(A.cj(m,!0,B.j,m,m,r,B.r,m,m,10,j,0,i.b*0.1),B.j,n.a.c,m,s)}}
 A.aYg.prototype={
-$0(){A.aW(this.a).bh(0,"/",null)},
+$0(){this.a.d="Home"
+A.aW(this.b).bh(0,"/",null)},
 $S:0}
 A.aYh.prototype={
 $1(a){var s=null
@@ -111124,7 +111127,8 @@ A.aYi.prototype={
 $0(){A.aW(this.a).bh(0,"/login",null)},
 $S:0}
 A.aYj.prototype={
-$0(){A.aW(this.a).bh(0,"/",null)},
+$0(){this.a.d="Home"
+A.aW(this.b).bh(0,"/",null)},
 $S:0}
 A.aYk.prototype={
 $1(a){var s=null

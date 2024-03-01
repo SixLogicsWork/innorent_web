@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!--
+  <head>
+    <!--
     If you are serving your web app in a path other than the root, change the
     href value below to reflect the base path you are serving from.
 
@@ -17,54 +17,129 @@
     https://sixlogicswork.github.io/innorent_web/
     https://flutter.6lgx.com/#/
   -->
-  <base href="https://flutter.6lgx.com/">
+    <base href="https://flutter.6lgx.com/" />
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="home_hunter">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="home_hunter" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
 
-  <title>home_hunter</title>
-  <link rel="manifest" href="manifest.json">
+    <title>home_hunter</title>
+    <link rel="manifest" href="manifest.json" />
 
-  <script>
-    // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "1548000900";
-  </script>
-  <!-- <script type="text/javascript">
+    <script>
+      // The value below is injected by flutter build, do not touch.
+      const serviceWorkerVersion = "2693523696";
+    </script>
+    <!-- <script type="text/javascript">
     window.flutterWebRenderer = "html";
 </script> -->
-  <!-- This script adds the flutter initialization JS code -->
-  <script src="flutter.js" defer></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMFXFLBF4WNNX7Q5V7CaGl7u4IgQcwLZk"></script>
-</head>
-<body>
-  <script>
-    window.addEventListener('load', function(ev) {
-      // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
-        serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
-        },
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMFXFLBF4WNNX7Q5V7CaGl7u4IgQcwLZk"></script>
+
+    <script>
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+      import { getMessaging } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-messaging.js";
+    </script>
+    <!-- <style>
+      body {
+        position: relative;
+      }
+      .show-toastify{
+        display: block;
+      }
+      .toastify {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: -100%;
+        background-color: #4ecca3;
+        z-index: 9999;
+        min-height: 50px;
+        width: 200px;
+        color: rgb(255 255 255);
+        padding: 10px 20px;
+        border-radius: 5px;
+        animation: slideIn 0.5s forwards, fadeOut 0.5s 4.5s forwards;
+      }
+
+      @keyframes slideIn {
+        0% {
+          right: -100;
+        }
+        100% {
+          right: 20px;
+        }
+      }
+
+      @keyframes fadeOut {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- <div class="toastify none" id="toastify">OK</div> -->
+    <script>
+      window.addEventListener("load", function (ev) {
+        // Download main.dart.js
+        _flutter.loader.loadEntrypoint({
+          serviceWorker: {
+            serviceWorkerVersion: serviceWorkerVersion,
+          },
+          onEntrypointLoaded: function (engineInitializer) {
+            engineInitializer.initializeEngine().then(function (appRunner) {
+              appRunner.runApp();
+            });
+          },
+        });
+      });
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js"></script>
+    <script type="text/javascript">
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.worker.min.js";
+    </script>
+    <!-- ...other html setup. -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/firebase-messaging-sw.js");
+        });
+      }
+    </script>
+    <!-- <script>
+      const channel = new BroadcastChannel("background-message-channel");
+
+      channel.addEventListener("message", (event) => {
+        console.log("Received message from service worker:", event.data);
+        const toastifyDiv = document.getElementById("toastify");
+        if (toastifyDiv) {
+          toastifyDiv.innerHTML = event.data;
+          toastifyDiv.classList.add("show-toastify");
+          setTimeout(() => {
+            toastifyDiv.classList.remove("show-toastify");
+            setTimeout(() => {
+              toastifyDiv.remove();
+            }, 500);
+          }, 5000);
         }
       });
-    });
-  </script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.min.js"></script>
-  <script type="text/javascript">
-     pdfjsLib.GlobalWorkerOptions.workerSrc = "//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.456/pdf.worker.min.js";
-  </script>
-</body>
+    </script> -->
+    <!-- ...put the script at the bottom of the enclosing body tags. -->
+  </body>
 </html>

@@ -17,7 +17,7 @@
     https://sixlogicswork.github.io/innorent_web/
     https://flutter.6lgx.com/
   -->
-    <base href="https://flutter.6lgx.com/" />
+    <base href="https://sixlogicswork.github.io/innorent_web/" />
 
     <meta charset="UTF-8" />
     <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
@@ -37,7 +37,7 @@
 
     <script>
       // The value below is injected by flutter build, do not touch.
-      const serviceWorkerVersion = "1389722689";
+      const serviceWorkerVersion = "3942482666";
     </script>
     <!-- <script type="text/javascript">
     window.flutterWebRenderer = "html";
@@ -93,9 +93,52 @@
     </style> -->
   </head>
   <body>
+    <style>
+      body{background-color: rgba(0, 191, 255, 0.086);
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+      }
+      .spacer{
+        height: 20px;
+      }
+      .main-content{
+        height: 100%;
+        width: 100%;
+        margin-bottom: 40px;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity .4s ease-out;
+      } 
+      
+      .loader {
+        height: 4px;
+        width: 130px;
+        --c:no-repeat linear-gradient(#386c5f 0 0);
+        background: var(--c),var(--c),#386c5f3b;
+        background-size: 60% 100%;
+        animation: l16 3s infinite;
+}
+      @keyframes l16 {
+        0%   {background-position:-150% 0,-150% 0}
+        66%  {background-position: 250% 0,-150% 0}
+        100% {background-position: 250% 0, 250% 0}
+}
+       
+      
+
+
+    </style>
+   
     <!-- <div class="toastify none" id="toastify">OK</div> -->
     <script>
+      function delay(time){
+        return new Promise(resolve=>setTimeout(resolve, time))
+      }
       window.addEventListener("load", function (ev) {
+        var loaderContent=document.querySelector('#loader-content');
         // Download main.dart.js
         _flutter.loader.loadEntrypoint({
           serviceWorker: {
@@ -103,6 +146,8 @@
           },
           onEntrypointLoaded: function (engineInitializer) {
             engineInitializer.initializeEngine().then(function (appRunner) {
+              loaderContent.style.opacity="0";
+             
               appRunner.runApp();
             });
           },
@@ -141,5 +186,18 @@
       });
     </script> -->
     <!-- ...put the script at the bottom of the enclosing body tags. -->
+   
+     
+       
+        <div class="main-content"  id="loader-content">
+          
+          <img src="favicon.png" alt="logo" class="img-preloader-icon">
+          <div class="spacer"></div>
+          <div class="loader"></div>
+      </div>
+      
+       
+  
+  
   </body>
 </html>

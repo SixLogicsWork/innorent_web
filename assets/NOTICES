@@ -4845,10 +4845,16 @@ file_selector_windows
 flutter_lints
 flutter_plugin_android_lifecycle
 go_router
+google_identity_services_web
 google_maps_flutter
 google_maps_flutter_android
 google_maps_flutter_ios
 google_maps_flutter_platform_interface
+google_sign_in
+google_sign_in_android
+google_sign_in_ios
+google_sign_in_platform_interface
+google_sign_in_web
 image_picker_for_web
 image_picker_linux
 image_picker_macos
@@ -7489,6 +7495,9 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------------
+firebase_auth
+firebase_auth_platform_interface
+firebase_auth_web
 firebase_core
 firebase_core_platform_interface
 firebase_messaging
